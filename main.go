@@ -1,12 +1,25 @@
 package main
 
 import "C"
-import "os"
 
-func init() {
-	go func() {
-		os.WriteFile("testfile", []byte("d34dc0de"), 777)
-	}()
+import (
+	"unsafe"
+
+	"golang.org/x/sys/windows"
+)
+
+//export Test
+func Test() {
+	windows.MessageBox(0, windows.StringToUTF16Ptr("hello from"), windows.StringToUTF16Ptr("Test"), 0)
+}
+
+//export OnProcessAttach
+func OnProcessAttach(
+	hinstDLL unsafe.Pointer, // handle to DLL module
+	fdwReason uint32, // reason for calling function
+	lpReserved unsafe.Pointer, // reserved
+) {
+	windows.MessageBox(0, windows.StringToUTF16Ptr("hello from"), windows.StringToUTF16Ptr("OPA"), 0)
 }
 
 func main() {}

@@ -1,2 +1,5 @@
 *.dll
 *.def
+*.exe
+build
+*.h
