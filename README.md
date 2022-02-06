@@ -1,4 +1,4 @@
-# dlluge
+# dllexical
 
 Create a golang dll with forwards to a target PE's imports.
 Uses [ino](github.com/audiblelink/ino) to generate \*.def files.
