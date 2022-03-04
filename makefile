@@ -13,7 +13,7 @@ dir ?= build
 out ?= evil.dll
 
 
-help: ## Usage: make amd64|386|all hijack=dbghelp.dll from=path/to/zoom.exe
+help: ## Usage: make amd64|386|all hijack=dbghelp.dll from=path/to/teams.exe
 	@grep -E '^[a-zA-Z0-9]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 all: amd64 386 ## build x86 and x64 dll. required args: hijack= from=
