@@ -1,7 +1,7 @@
 # dllexical
 
 Create a golang dll that forwards a target PE's imports.
-Uses [ino](github.com/audiblelink/ino) to generate \*.def files.
+Uses [ino](https://github.com/audibleblink/ino) to generate \*.def files.
 `dlltool` from mingw converts them to \*.exp files and it all gets passed
 to the linker via go build's ldflags.
 
